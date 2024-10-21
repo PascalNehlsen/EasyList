@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
-import { ShoppinglistCompontent } from './shopping-list/shopping-list.component';
+import { ShoppinglistCompontent } from './main/shopping-list/shopping-list.component';
+import { AftComponent } from './main/aft/aft.component';
+import { ImprintComponent } from './imprint/imprint.component';
 
 export const routes: Routes = [
-  { path: 'tasks', component: ShoppinglistCompontent },
+  { path: '', component: AftComponent },
+  { path: 'imprint', component: ImprintComponent },
 ];

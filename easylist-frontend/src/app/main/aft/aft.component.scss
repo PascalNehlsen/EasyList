@@ -1,0 +1,37 @@
+section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1440px;
+    width: 1440px;
+    gap: 30px;
+    > p {
+      text-align: center;
+    }
+    > p:first-of-type {
+      font-size: 32px;
+    }
+    > h1 {
+      font-size: 56px;
+    }
+  }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}

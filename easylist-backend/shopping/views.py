@@ -1,10 +1,8 @@
-# tasks/views.py
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Task
 from .serializers import TaskSerializer
 
-# Liste der Aufgaben (GET) und Erstellung neuer Aufgaben (POST)
 @api_view(['GET', 'POST'])
 def task_list(request):
     if request.method == 'GET':
@@ -19,7 +17,6 @@ def task_list(request):
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
-# Details zu einer Aufgabe, Aktualisierung und Löschung
 @api_view(['GET', 'PUT', 'DELETE'])
 def task_detail(request, pk):
     try:
