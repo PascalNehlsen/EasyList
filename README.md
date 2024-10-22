@@ -89,13 +89,7 @@
 
 Make sure to configure CORS in your Django settings so that the Angular frontend can communicate with the Django backend. To enable CORS, follow these steps:
 
-1. Install `django-cors-headers`:
-
-   ```bash
-   pip install django-cors-headers
-   ```
-
-2. Add `corsheaders` to your `INSTALLED_APPS` and middleware in `settings.py`:
+1. Add `corsheaders` to your `INSTALLED_APPS` and middleware in `settings.py`:
 
    ```python
    INSTALLED_APPS = [
