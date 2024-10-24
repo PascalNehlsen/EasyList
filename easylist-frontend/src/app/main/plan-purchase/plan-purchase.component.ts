@@ -8,4 +8,15 @@ import { RouterModule } from '@angular/router';
   templateUrl: './plan-purchase.component.html',
   styleUrl: './plan-purchase.component.scss',
 })
-export class PlanPurchaseComponent {}
+export class PlanPurchaseComponent {
+  categories: string[] = [
+    './assets/images/image-categories/apple.png',
+    './assets/images/image-categories/bread.png',
+    './assets/images/image-categories/candy.png',
+    './assets/images/image-categories/cereal.png',
+    './assets/images/image-categories/chicken.png',
+    './assets/images/image-categories/cucumber.png',
+    './assets/images/image-categories/milk.png',
+    './assets/images/image-categories/water.png',
+  ];
+}
