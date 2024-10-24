@@ -1,11 +1,20 @@
-<tr>
-    <td><strong>1. Einkauf planen</strong></td>
-    <td>
-        <ul>
-            <li>In der App siehst du <strong>Bilder</strong> von Lebensmitteln und Dingen, die du kaufen
-                willst.</li>
-            <li>Du kannst auf das Bild drücken und es auf deine Einkaufsliste setzen.</li>
-            <li>So weißt du genau, was du einkaufen willst.</li>
-        </ul>
-    </td>
-</tr>
+<section>
+    <h1>Einkauf planen</h1>
+
+    <p>In der App siehst du Bilder von Lebensmitteln und Dingen, die du kaufen
+        willst.</p>
+    <p>Du kannst auf das Bild drücken und es auf deine Einkaufsliste setzen.</p>
+    <p>So weißt du genau, was du einkaufen willst.</p>
+
+    <h2>Kategorien:</h2>
+
+    <div class="shopping-categories">
+        @for(categorie of this.categories; track $index) {
+        <a href="#">
+            <div>
+                <img [src]="categorie" alt="">
+            </div>
+        </a>
+        }
+    </div>
+</section>
