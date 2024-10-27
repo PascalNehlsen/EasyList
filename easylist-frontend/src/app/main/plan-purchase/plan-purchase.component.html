@@ -10,7 +10,7 @@
 
     <div class="shopping-categories">
         @for(categorie of this.categories; track $index) {
-        <div (click)="openCategory($index)">
+        <div>
             <strong>{{ getCategoryName(categorie) }}</strong>
             <img [src]="categorie" alt="">
         </div>

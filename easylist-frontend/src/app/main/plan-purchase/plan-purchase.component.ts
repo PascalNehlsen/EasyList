@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DialogComponent } from '../dialog/dialog.component';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-plan-purchase',
@@ -21,13 +20,6 @@ export class PlanPurchaseComponent {
     './assets/images/image-categories/milchprodukte.png',
     './assets/images/image-categories/getraenke.png',
   ];
-
-  constructor(private dialog: MatDialog) {}
-
-  openCategory($index: number): void {
-    console.log('text' + $index);
-    const dialogRef = this.dialog.open(DialogComponent);
-  }
 
   getCategoryName(imagePath: string): string {
     const fileName = imagePath.split('/').pop()?.split('.').shift() || '';
