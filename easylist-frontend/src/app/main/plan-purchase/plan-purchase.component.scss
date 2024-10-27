@@ -23,24 +23,25 @@ h2 {
 
 .shopping-categories {
   display: flex;
-  gap: 50px;
+  gap: 30px;
   max-width: 1440px;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 10px;
-  a {
-    > div {
-      border: 3px solid #000;
-      height: 200px;
-      width: 200px;
-      border-radius: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-        height: 150px;
-        width: 150px;
-      }
+
+  > div {
+    border: 3px solid #000;
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    img {
+      height: 150px;
+      width: 150px;
     }
   }
 }

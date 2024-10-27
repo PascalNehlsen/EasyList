@@ -6,15 +6,14 @@
     <p>Du kannst auf das Bild drücken und es auf deine Einkaufsliste setzen.</p>
     <p>So weißt du genau, was du einkaufen willst.</p>
 
-    <h2>Kategorien:</h2>
+    <h2>Kategorien</h2>
 
     <div class="shopping-categories">
         @for(categorie of this.categories; track $index) {
-        <a href="#">
-            <div>
-                <img [src]="categorie" alt="">
-            </div>
-        </a>
+        <div (click)="openCategory($index)">
+            <strong>{{ getCategoryName(categorie) }}</strong>
+            <img [src]="categorie" alt="">
+        </div>
         }
     </div>
 </section>
