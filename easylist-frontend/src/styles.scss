@@ -7,3 +7,13 @@
 h1 {
   font-size: 56px;
 }
+
+.cdk-global-overlay-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  display: flex;
+}
