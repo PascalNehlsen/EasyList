@@ -1,4 +1,10 @@
-<section>
-    <p>dialog works!</p>
-    <button (click)="closeDialog()">Hinzufügen</button>
+<section class="shopping-categories">
+    <h2>Bilder der Kategorie</h2>
+    @for (image of data; track $index) {
+    <div>
+        <img [src]="image" alt="Category Image" />
+    </div>
+    }
+
+    <button (click)="closeDialog()">Schließen</button>
 </section>

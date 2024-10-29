@@ -20,7 +20,7 @@ export class ArrayService {
         ],
       },
       {
-        name: 'baked-goods',
+        name: 'brot',
         items: [
           './assets/images/baked-goods/bread.png',
           './assets/images/baked-goods/cinnamon-roll.png',
@@ -28,7 +28,7 @@ export class ArrayService {
         ],
       },
       {
-        name: 'cereal-products',
+        name: 'muesli',
         items: [
           './assets/images/cereal-products/cereal.png',
           './assets/images/cereal-products/cereals.png',
@@ -42,14 +42,14 @@ export class ArrayService {
         ],
       },
       {
-        name: 'dairy-products',
+        name: 'milchprodukte',
         items: [
           './assets/images/dairy-products/milk.png',
           './assets/images/dairy-products/yoghurt.png',
         ],
       },
       {
-        name: 'drinks',
+        name: 'getraenke',
         items: [
           './assets/images/drinks/juice.png',
           './assets/images/drinks/soft-drink.png',
@@ -58,7 +58,7 @@ export class ArrayService {
         ],
       },
       {
-        name: 'fruits',
+        name: 'obst',
         items: [
           './assets/images/fruits/apple.png',
           './assets/images/fruits/banana.png',
@@ -69,11 +69,11 @@ export class ArrayService {
         ],
       },
       {
-        name: 'meat',
+        name: 'fleisch',
         items: ['./assets/images/meat/chicken.png'],
       },
       {
-        name: 'sweets',
+        name: 'suessigkeiten',
         items: [
           './assets/images/sweets/candy.png',
           './assets/images/sweets/chocolate.png',
@@ -83,7 +83,7 @@ export class ArrayService {
         ],
       },
       {
-        name: 'vegetables',
+        name: 'gemuese',
         items: [
           './assets/images/vegetables/corn.png',
           './assets/images/vegetables/cucumber.png',
@@ -98,10 +98,26 @@ export class ArrayService {
     ],
   };
 
-  getCategories(): string[] {
-    const imageCategory = this.images.categories.find(
-      (category) => category.name === 'image-categories'
+  getCategoryByImage(imagePath: string): string[] | null {
+    // Extrahiere den Dateinamen ohne die Dateiendung
+    const fileNameWithoutExtension = imagePath
+      .split('/')
+      .pop() // z.B. 'brot.png'
+      ?.split('.')[0]; // Entfernt die Dateiendung, z.B. 'brot'
+
+    // Finde die Kategorie, die den Namen ohne Endung enthält
+    const category = this.images.categories.find(
+      (cat) => cat.name === fileNameWithoutExtension
     );
-    return imageCategory ? imageCategory.items : [];
+
+    // Gibt die gefundenen Elemente der Kategorie zurück oder null, wenn keine gefunden wurde
+    return category ? category.items : null;
+  }
+
+  getMainCategories(): string[] {
+    return (
+      this.images.categories.find((cat) => cat.name === 'image-categories')
+        ?.items || []
+    );
   }
 }
