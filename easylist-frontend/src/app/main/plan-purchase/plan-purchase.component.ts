@@ -31,7 +31,6 @@ export class PlanPurchaseComponent {
   }
 
   openDialog(index: number) {
-    const categoryName = this.getCategoryName(this.categories[index]);
     this.dialog.open(DialogComponent);
   }
 }
