@@ -27,11 +27,18 @@ export class PlanPurchaseComponent {
   categories: string[] = [];
 
   constructor(public dialog: MatDialog, private dataService: ArrayService) {
-    this.categories = this.dataService.getCategories();
+    this.categories = this.dataService.getMainCategories();
   }
 
-  openDialog(index: number) {
-    const categoryName = this.getCategoryName(this.categories[index]);
-    this.dialog.open(DialogComponent);
+  openDialog(index: number): void {
+    const selectedImage = this.categories[index];
+
+    const categoryItems = this.dataService.getCategoryByImage(selectedImage);
+
+    if (categoryItems) {
+      this.dialog.open(DialogComponent, {
+        data: categoryItems,
+      });
+    }
   }
 }

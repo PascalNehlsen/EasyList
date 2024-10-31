@@ -1,4 +1,9 @@
-<section>
-    <p>dialog works!</p>
-    <button (click)="closeDialog()">Hinzufügen</button>
+<section class="dialog-items">
+    @for (image of data; track $index) {
+    <div>
+        <img [src]="image" alt="Category Image" />
+    </div>
+    }
+
+    <button (click)="closeDialog()">Schließen</button>
 </section>
