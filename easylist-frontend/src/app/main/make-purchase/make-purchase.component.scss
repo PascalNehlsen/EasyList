@@ -1,0 +1,12 @@
+section {
+  display: flex;
+  justify-content: start;
+  height: calc(100vh - 202px);
+  align-items: center;
+  flex-direction: column;
+  > p {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+}
