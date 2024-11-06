@@ -4,4 +4,12 @@
     <p>Wenn du im Laden bist, zeigt dir die App, was du noch kaufen musst.</p>
     <p>Du siehst immer nur <strong>ein Bild auf einmal</strong>. So bleibt es übersichtlich.</p>
     <p>Du kannst die Dinge abhaken, die du schon in den Einkaufswagen gelegt hast.</p>
+
+    <div class="shopping-categories">
+        @for(image of this.shoppingList; track $index) {
+        <div>
+            <img [src]="image" alt="">
+        </div>
+        }
+    </div>
 </section>

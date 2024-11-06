@@ -1,9 +1,12 @@
 <section class="dialog-items">
-    @for (image of data; track $index) {
-    <div>
-        <img [src]="image" alt="Category Image" />
+    <div class="item-container">
+        @for (image of data; track $index) {
+        <div class="item" (click)="moveToList($index)">
+            <img [src]="image" alt="Category Image" />
+        </div>
+        }
     </div>
-    }
+
 
     <button (click)="closeDialog()">Schließen</button>
 </section>
