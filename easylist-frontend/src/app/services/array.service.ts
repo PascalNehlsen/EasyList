@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ArrayService {
+  public shoppingList: string[] = [];
+
   images = {
     categories: [
       {
@@ -99,18 +101,12 @@ export class ArrayService {
   };
 
   getCategoryByImage(imagePath: string): string[] | null {
-    // Extrahiere den Dateinamen ohne die Dateiendung
-    const fileNameWithoutExtension = imagePath
-      .split('/')
-      .pop() // z.B. 'brot.png'
-      ?.split('.')[0]; // Entfernt die Dateiendung, z.B. 'brot'
+    const fileNameWithoutExtension = imagePath.split('/').pop()?.split('.')[0];
 
-    // Finde die Kategorie, die den Namen ohne Endung enthält
     const category = this.images.categories.find(
       (cat) => cat.name === fileNameWithoutExtension
     );
 
-    // Gibt die gefundenen Elemente der Kategorie zurück oder null, wenn keine gefunden wurde
     return category ? category.items : null;
   }
 
@@ -119,5 +115,9 @@ export class ArrayService {
       this.images.categories.find((cat) => cat.name === 'image-categories')
         ?.items || []
     );
+  }
+
+  getShoppingList(): string[] {
+    return this.shoppingList;
   }
 }
