@@ -22,10 +22,13 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       
-      - name: Print Directory Structure
+      - name: Debug Directory Structure
         run: |
+          pwd  # Print working directory
           ls -R  # List all files and folders recursively
-          
+          # Check for manage.py location specifically
+          find . -name "manage.py"
+      
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
