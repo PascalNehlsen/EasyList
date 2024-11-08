@@ -26,8 +26,7 @@ jobs:
         run: |
           pwd  # Print working directory
           ls -R  # List all files and folders recursively
-          # Check for manage.py location specifically
-          find . -name "manage.py"
+          find . -name "manage.py"  # Find the location of manage.py
       
       - name: Install Dependencies
         run: |
@@ -35,6 +34,6 @@ jobs:
           pip install -r requirements.txt
       
       - name: Run Tests
-        working-directory: easylist/easylist-backend
+        working-directory: easylist-backend
         run: |
           python manage.py test
