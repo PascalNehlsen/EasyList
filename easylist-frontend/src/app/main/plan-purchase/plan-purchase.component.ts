@@ -7,7 +7,7 @@ import { ArrayService } from '../../services/array.service';
 @Component({
   selector: 'app-plan-purchase',
   standalone: true,
-  imports: [RouterModule, DialogComponent, MatDialogModule],
+  imports: [RouterModule, MatDialogModule],
   templateUrl: './plan-purchase.component.html',
   styleUrl: './plan-purchase.component.scss',
 })

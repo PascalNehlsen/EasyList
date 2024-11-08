@@ -1,7 +1,7 @@
 <section class="dialog-items">
     <div class="item-container">
         @for (image of data; track $index) {
-        <div class="item" (click)="moveToList($index)">
+        <div class="item" [ngClass]="{ 'selected': $index === this.selectedIndex }" (click)="moveToList($index)">
             <img [src]="image" alt="Category Image" />
         </div>
         }

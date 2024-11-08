@@ -11,12 +11,14 @@ import { ArrayService } from '../../services/array.service';
 })
 export class MakePurchaseComponent implements OnInit {
   ngOnInit() {
-    // Holt die shoppingList vom ArrayService
     this.shoppingList = this.arrayService.getShoppingList();
-    console.log(this.shoppingList); // Zeigt die Liste in der Konsole
   }
 
   shoppingList: string[] = [];
 
   constructor(private arrayService: ArrayService) {}
+
+  removeItem($index: number) {
+    this.shoppingList.splice($index, 1);
+  }
 }
