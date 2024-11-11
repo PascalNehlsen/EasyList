@@ -7,7 +7,7 @@
 
     <div class="shopping-categories">
         @for(image of this.shoppingList; track $index) {
-        <div>
+        <div (click)="removeItem($index)">
             <img [src]="image" alt="">
         </div>
         }
