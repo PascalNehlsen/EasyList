@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class DialogComponent {
   shoppingList: any[] = [];
-  selectedIndex: number | null = null;
+  selectedIndices: number[] = [];
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
@@ -28,12 +28,16 @@ export class DialogComponent {
   }
 
   moveToList(index: number) {
-    if (this.selectedIndex === index) {
-      this.selectedIndex = null;
+    const category = this.arrayService.images.categories[index];
+    const item = category.items[index];
+    item.selected = !item.selected;
+
+    if (item.selected) {
+      this.shoppingList.push(item);
     } else {
-      this.selectedIndex = index;
-      this.shoppingList.push(this.data[index]);
+      this.shoppingList = this.shoppingList.filter(
+        (shoppingItem) => shoppingItem !== item
+      );
     }
-    console.log(this.shoppingList);
   }
 }

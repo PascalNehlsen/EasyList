@@ -31,9 +31,7 @@ export class PlanPurchaseComponent {
   }
 
   openDialog(index: number): void {
-    const selectedImage = this.categories[index];
-
-    const categoryItems = this.dataService.getCategoryByImage(selectedImage);
+    const categoryItems = this.dataService.getCategoryByImage(index);
 
     if (categoryItems) {
       this.dialog.open(DialogComponent, {
