@@ -6,14 +6,9 @@
     <p>Du kannst die Dinge abhaken, die du schon in den Einkaufswagen gelegt hast.</p>
 
     <div class="shopping-categories">
-        <!-- @for(image of this.shoppingList; track $index) {
-        <div (click)="removeItem($index)">
-            <img [src]="image" alt="">
-        </div>
-        } -->
         @if (this.shoppingList.length >= 1) {
         <div (click)="removeItem()">
-            <img [src]="this.shoppingList[this.indexOfShoppingList]" alt="">
+            <img [src]="this.shoppingList[0]" alt="">
         </div>
         }
     </div>

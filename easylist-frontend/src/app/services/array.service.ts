@@ -6,115 +6,145 @@ import { Injectable } from '@angular/core';
 export class ArrayService {
   public shoppingList: string[] = [];
 
+  mainCategories = {
+    name: 'image-categories',
+    items: [
+      { src: './assets/images/image-categories/obst.png', selected: false },
+      { src: './assets/images/image-categories/brot.png', selected: false },
+      {
+        src: './assets/images/image-categories/suessigkeiten.png',
+        selected: false,
+      },
+      {
+        src: './assets/images/image-categories/muesli.png',
+        selected: false,
+      },
+      {
+        src: './assets/images/image-categories/fleisch.png',
+        selected: false,
+      },
+      {
+        src: './assets/images/image-categories/gemuese.png',
+        selected: false,
+      },
+      {
+        src: './assets/images/image-categories/milchprodukte.png',
+        selected: false,
+      },
+      {
+        src: './assets/images/image-categories/getraenke.png',
+        selected: false,
+      },
+    ],
+  };
+
   images = {
     categories: [
       {
-        name: 'image-categories',
+        name: 'obst',
         items: [
-          './assets/images/image-categories/obst.png',
-          './assets/images/image-categories/brot.png',
-          './assets/images/image-categories/suessigkeiten.png',
-          './assets/images/image-categories/muesli.png',
-          './assets/images/image-categories/fleisch.png',
-          './assets/images/image-categories/gemuese.png',
-          './assets/images/image-categories/milchprodukte.png',
-          './assets/images/image-categories/getraenke.png',
+          { src: './assets/images/fruits/apple.png', selected: false },
+          { src: './assets/images/fruits/banana.png', selected: false },
+          { src: './assets/images/fruits/grapes.png', selected: false },
+          { src: './assets/images/fruits/orange.png', selected: false },
+          { src: './assets/images/fruits/pear.png', selected: false },
+          { src: './assets/images/fruits/pineapple.png', selected: false },
         ],
       },
       {
         name: 'brot',
         items: [
-          './assets/images/baked-goods/bread.png',
-          './assets/images/baked-goods/cinnamon-roll.png',
-          './assets/images/baked-goods/croissant.png',
+          { src: './assets/images/baked-goods/bread.png', selected: false },
+          {
+            src: './assets/images/baked-goods/cinnamon-roll.png',
+            selected: false,
+          },
+          { src: './assets/images/baked-goods/croissant.png', selected: false },
+        ],
+      },
+      {
+        name: 'suessigkeiten',
+        items: [
+          { src: './assets/images/sweets/candy.png', selected: false },
+          { src: './assets/images/sweets/chocolate.png', selected: false },
+          { src: './assets/images/sweets/cupcake.png', selected: false },
+          { src: './assets/images/sweets/donut.png', selected: false },
+          { src: './assets/images/sweets/waffles.png', selected: false },
         ],
       },
       {
         name: 'muesli',
         items: [
-          './assets/images/cereal-products/cereal.png',
-          './assets/images/cereal-products/cereals.png',
+          {
+            src: './assets/images/cereal-products/cereal.png',
+            selected: false,
+          },
+          {
+            src: './assets/images/cereal-products/cereals.png',
+            selected: false,
+          },
         ],
       },
       {
-        name: 'communication',
+        name: 'fleisch',
+        items: [{ src: './assets/images/meat/chicken.png', selected: false }],
+      },
+      {
+        name: 'gemuese',
         items: [
-          './assets/images/communication/accept.png',
-          './assets/images/communication/remove.png',
+          { src: './assets/images/vegetables/corn.png', selected: false },
+          { src: './assets/images/vegetables/cucumber.png', selected: false },
+          {
+            src: './assets/images/vegetables/green-pepper.png',
+            selected: false,
+          },
+          { src: './assets/images/vegetables/onion.png', selected: false },
+          { src: './assets/images/vegetables/potato.png', selected: false },
+          { src: './assets/images/vegetables/red-pepper.png', selected: false },
+          { src: './assets/images/vegetables/salad.png', selected: false },
+          {
+            src: './assets/images/vegetables/yellow-pepper.png',
+            selected: false,
+          },
         ],
       },
       {
         name: 'milchprodukte',
         items: [
-          './assets/images/dairy-products/milk.png',
-          './assets/images/dairy-products/yoghurt.png',
+          { src: './assets/images/dairy-products/milk.png', selected: false },
+          {
+            src: './assets/images/dairy-products/yoghurt.png',
+            selected: false,
+          },
         ],
       },
       {
         name: 'getraenke',
         items: [
-          './assets/images/drinks/juice.png',
-          './assets/images/drinks/soft-drink.png',
-          './assets/images/drinks/softdrinks.png',
-          './assets/images/drinks/water.png',
+          { src: './assets/images/drinks/juice.png', selected: false },
+          { src: './assets/images/drinks/soft-drink.png', selected: false },
+          { src: './assets/images/drinks/softdrinks.png', selected: false },
+          { src: './assets/images/drinks/water.png', selected: false },
         ],
       },
       {
-        name: 'obst',
+        name: 'communication',
         items: [
-          './assets/images/fruits/apple.png',
-          './assets/images/fruits/banana.png',
-          './assets/images/fruits/grapes.png',
-          './assets/images/fruits/orange.png',
-          './assets/images/fruits/pear.png',
-          './assets/images/fruits/pineapple.png',
-        ],
-      },
-      {
-        name: 'fleisch',
-        items: ['./assets/images/meat/chicken.png'],
-      },
-      {
-        name: 'suessigkeiten',
-        items: [
-          './assets/images/sweets/candy.png',
-          './assets/images/sweets/chocolate.png',
-          './assets/images/sweets/cupcake.png',
-          './assets/images/sweets/donut.png',
-          './assets/images/sweets/waffles.png',
-        ],
-      },
-      {
-        name: 'gemuese',
-        items: [
-          './assets/images/vegetables/corn.png',
-          './assets/images/vegetables/cucumber.png',
-          './assets/images/vegetables/green-pepper.png',
-          './assets/images/vegetables/onion.png',
-          './assets/images/vegetables/potato.png',
-          './assets/images/vegetables/red-pepper.png',
-          './assets/images/vegetables/salad.png',
-          './assets/images/vegetables/yellow-pepper.png',
+          { src: './assets/images/communication/accept.png', selected: false },
+          { src: './assets/images/communication/remove.png', selected: false },
         ],
       },
     ],
   };
 
-  getCategoryByImage(imagePath: string): string[] | null {
-    const fileNameWithoutExtension = imagePath.split('/').pop()?.split('.')[0];
+  getCategoryByImage(index: number): string[] | null {
+    const category = this.images.categories[index];
 
-    const category = this.images.categories.find(
-      (cat) => cat.name === fileNameWithoutExtension
-    );
-
-    return category ? category.items : null;
+    return category ? category.items.map((item) => item.src) : null;
   }
 
   getMainCategories(): string[] {
-    return (
-      this.images.categories.find((cat) => cat.name === 'image-categories')
-        ?.items || []
-    );
+    return this.mainCategories.items.map((item) => item.src) || [];
   }
 
   getShoppingList(): string[] {

@@ -14,14 +14,11 @@ export class MakePurchaseComponent implements OnInit {
     this.shoppingList = this.arrayService.getShoppingList();
   }
 
-  indexOfShoppingList: number = 0;
-
   shoppingList: string[] = [];
 
   constructor(private arrayService: ArrayService) {}
 
   removeItem() {
     this.shoppingList.splice(0, 1);
-    this.indexOfShoppingList + 1;
   }
 }
